@@ -64,7 +64,7 @@ const SolarFencing: React.FC = () => {
                     </p>
                     <p>
                         Discover how this innovative technology works, its key components, and why
-                        it's the smartest investment for your security needs.
+                        it&#39;s the smartest investment for your security needs.
                     </p>
 
                     {/* Section: How it Works */}

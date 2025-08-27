@@ -69,7 +69,7 @@ const SolarStreetLight: React.FC = () => {
           </h2>
           <p>
             Traditional street lighting is expensive, reliant on a fragile grid,
-            and contributes to carbon emissions. It's time for a smarter
+            and contributes to carbon emissions. It&#39;s time for a smarter
             solution. Our solar-powered street lights are completely
             self-sufficient, drawing clean energy from the sun to provide
             brilliant, reliable illumination all night long.

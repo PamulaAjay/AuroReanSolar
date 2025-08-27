@@ -55,7 +55,7 @@ const OnGridSolar: React.FC = () => {
                     </div>
                     <h2 className={styles.components}>Power Your Home with the Sun: A Comprehensive Guide to On-Grid Solar Systems in India</h2>
                     <p>
-                        Harnessing the sun's energy with a rooftop on-grid solar system is an increasingly popular
+                        Harnessing the sun&#39;s energy with a rooftop on-grid solar system is an increasingly popular
                         and economically savvy choice for Indian homeowners. With rising electricity tariffs and
                         attractive government incentives, switching to solar not only contributes to a greener
                         environment but also promises significant long-term savings. This guide delves into the
@@ -118,7 +118,7 @@ const OnGridSolar: React.FC = () => {
                         * 3 kW System: ₹1,90,000 to ₹2,50,000<br />
                         * 5 kW System: ₹2,70,000 to ₹3,60,000</p>
 
-                    <p> Note: These prices are indicative and may vary. It's always best to get quotes from multiple reputable installers.</p>
+                    <p> Note: These prices are indicative and may vary. It&#39;s always best to get quotes from multiple reputable installers.</p>
 
                     <h2 className={styles.components}>Subsidy for Housing Societies</h2>
                     <p>

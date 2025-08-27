@@ -71,7 +71,7 @@ const RooftopSolar: React.FC = () => {
           </h2>
           <p>
             A residential rooftop solar system is a simple yet powerful way to
-            generate your own electricity. Here's a breakdown of the process:
+            generate your own electricity. Here&#39;s a breakdown of the process:
           </p>
           <ul className={styles.list}>
             <li className={styles.listItem}>
@@ -84,7 +84,7 @@ const RooftopSolar: React.FC = () => {
             </li>
             <li className={styles.listItem}>
               <strong>Powering Your Home:</strong> AC electricity runs through
-              your home's panel to power lights, fans, ACs, and more.
+              your home&#39;s panel to power lights, fans, ACs, and more.
             </li>
             <li className={styles.listItem}>
               <strong>Excess Energy and Net Metering:</strong> Surplus power is

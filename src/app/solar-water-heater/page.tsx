@@ -84,8 +84,8 @@ const SolarWaterHeater: React.FC = () => {
           </p>
           <p>Here’s the step-by-step process:</p>
           <ul>
-            <li><strong>Absorption:</strong> Cold water from the storage tank flows into the bottom of the solar collector. The collector, with its dark, heat-absorbent surface, captures the sun's rays and heats the water inside its tubes.</li>
-            <li><strong>Convection:</strong> As the water heats up, it becomes lighter and less dense. This causes it to naturally rise through the collector's tubes.</li>
+            <li><strong>Absorption:</strong> Cold water from the storage tank flows into the bottom of the solar collector. The collector, with its dark, heat-absorbent surface, captures the sun&#39;s rays and heats the water inside its tubes.</li>
+            <li><strong>Convection:</strong> As the water heats up, it becomes lighter and less dense. This causes it to naturally rise through the collector&#39;s tubes.</li>
             <li><strong>Storage:</strong> The hot water flows into the top of the insulated storage tank, which is strategically placed above the collector.</li>
             <li><strong>Circulation:</strong> As the hot water enters the tank, it displaces the cooler, denser water at the bottom of the tank, which then flows down into the collector to be heated. This creates a continuous, natural circulation loop (a thermosyphon effect) as long as the sun is shining.</li>
             <li><strong>Ready for Use:</strong> You can then draw hot water directly from the top of the tank whenever you need it.</li>
@@ -99,7 +99,7 @@ const SolarWaterHeater: React.FC = () => {
           <p>How it works:</p>
           <ul>
             <li><strong>Pumping:</strong> A small, low-power pump pushes either water or a heat-transfer fluid (like a water-glycol mixture) from the storage tank to the solar collector.</li>
-            <li><strong>Heating:</strong> The fluid gets heated in the collector by the sun's energy.</li>
+            <li><strong>Heating:</strong> The fluid gets heated in the collector by the sun&#39;s energy.</li>
             <li><strong>Heat Exchange:</strong> The heated fluid is then pumped back to a heat exchanger, which is typically located inside or around the storage tank. Here, it transfers its heat to the water in the tank, without the fluids directly mixing.</li>
             <li><strong>Recirculation:</strong> After transferring its heat, the now-cooler fluid is pumped back to the collector to be reheated.</li>
             <li><strong>Smart Control:</strong> A controller unit automates this process, turning the pump on only when the collector is hotter than the water in the tank, ensuring maximum efficiency.</li>
@@ -112,7 +112,7 @@ const SolarWaterHeater: React.FC = () => {
           </p>
 
           <h3 className={styles.subHeading}>1. The Solar Collector: The Heart of the System</h3>
-          <p>This is where the magic begins. The collector's job is to absorb as much solar energy as possible and transfer it as heat to the water. There are two main types:</p>
+          <p>This is where the magic begins. The collector&#39;s job is to absorb as much solar energy as possible and transfer it as heat to the water. There are two main types:</p>
           <ul>
             <li>
               <strong>Flat Plate Collector (FPC):</strong>

@@ -59,7 +59,7 @@ const CommercialSolar: React.FC = () => {
                     <h2 className={styles.components}>Drive Your Business Forward: A Guide to Commercial & Industrial Rooftop Solar</h2>
                     <p>
                         Transform your idle rooftop into a power-generating asset. Reduce operating
-                        costs, secure energy independence, and enhance your brand's green credentials
+                        costs, secure energy independence, and enhance your brand&#39;s green credentials
                         with a state-of-the-art solar power plant.
                     </p>
 
@@ -188,7 +188,7 @@ const CommercialSolar: React.FC = () => {
                         </li>
                     </ol>
                     <p>
-                         This example shows a very strong financial case for installing a 100kW rooftop solar system, with the company saving over ₹2.5 crore and achieving an ROI of 556% over the system's lifetime.
+                         This example shows a very strong financial case for installing a 100kW rooftop solar system, with the company saving over ₹2.5 crore and achieving an ROI of 556% over the system&#39;s lifetime.
                     </p>
 
                     <h3 className={styles.subHeading}>Key Benefits</h3>

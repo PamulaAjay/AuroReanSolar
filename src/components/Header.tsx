@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaHome, FaBuilding, FaCity, FaSolarPanel, FaLightbulb, FaWater, FaShieldAlt, FaRoad } from "react-icons/fa";
 
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
       {/* Navigation */}
       <nav className={`${styles.nav} ${mobileMenuOpen ? styles.active : ""}`}>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><Link href="/">Home</Link></li>
 
           {/* Roof Top Solar */}
           <li
@@ -45,9 +46,9 @@ const Header: React.FC = () => {
             <span className={styles.dropdownLabel}>Roof Top Solar <Image  src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
             {activeDropdown === "rooftop" && (
               <ul className={styles.dropdownMenu}>
-                <li><a href="/residential"><FaHome className={styles.icon} /> Residential</a></li>
-                <li><a href="/commercial"><FaBuilding className={styles.icon} /> Commercial</a></li>
-                <li><a href="/housing-society"><FaCity className={styles.icon} /> Housing Society</a></li>
+                <li><Link href="/residential"><FaHome className={styles.icon} /> Residential</Link></li>
+                <li><Link href="/commercial"><FaBuilding className={styles.icon} /> Commercial</Link></li>
+                <li><Link href="/housing-society"><FaCity className={styles.icon} /> Housing Society</Link></li>
               </ul>
             )}
           </li>
@@ -60,17 +61,17 @@ const Header: React.FC = () => {
             <span className={styles.dropdownLabel}>Solar Solutions <Image src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
             {activeDropdown === "solutions" && (
               <ul className={styles.dropdownMenu}>
-                <li><a href="/off-grid"><FaSolarPanel className={styles.icon} /> Off-Grid</a></li>
-                <li><a href="/in-grid"><FaLightbulb className={styles.icon} /> On-Grid</a></li>
-                <li><a href="/solar-water-heater"><FaWater className={styles.icon} /> Solar Water Heater</a></li>
-                <li><a href="/solar-fencing"><FaShieldAlt className={styles.icon} /> Solar Fencing</a></li>
-                <li><a href="/solar-street-lights"><FaRoad className={styles.icon} /> Solar Street Lights</a></li>
+                <li><Link href="/off-grid"><FaSolarPanel className={styles.icon} /> Off-Grid</Link></li>
+                <li><Link href="/in-grid"><FaLightbulb className={styles.icon} /> On-Grid</Link></li>
+                <li><Link href="/solar-water-heater"><FaWater className={styles.icon} /> Solar Water Heater</Link></li>
+                <li><Link href="/solar-fencing"><FaShieldAlt className={styles.icon} /> Solar Fencing</Link></li>
+                <li><Link href="/solar-street-lights"><FaRoad className={styles.icon} /> Solar Street Lights</Link></li>
               </ul>
             )}
           </li>
 
-          <li><a href="/blogs">Blogs</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><Link href="/blogs">Blogs</Link></li>
+          <li><Link href="/contact">Contact Us</Link></li>
         </ul>
       </nav>
 

@@ -8,6 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -38,10 +39,10 @@ const Footer: React.FC = () => {
           
           <h4 className={styles.follow}>Follow Us</h4>
           <div className={styles.socials}>
-            <a href="https://web.whatsapp.com/" target="_blank"><FaWhatsapp /></a>
-            <a href="https://www.instagram.com/" target="_blank"><FaInstagram /></a>
-            <a href="https://www.facebook.com/" target="_blank"><FaFacebook /></a>
-            <a href="https://www.youtube.com/@myloveforyou" target="_blank"><FaYoutube /></a>
+            <Link href="https://web.whatsapp.com/" target="_blank"><FaWhatsapp /></Link>
+            <Link href="https://www.instagram.com/" target="_blank"><FaInstagram /></Link>
+            <Link href="https://www.facebook.com/" target="_blank"><FaFacebook /></Link>
+            <Link href="https://www.youtube.com/@myloveforyou" target="_blank"><FaYoutube /></Link>
           </div>
         </div>
 
@@ -51,9 +52,9 @@ const Footer: React.FC = () => {
             <div className={styles.center}>
               <h4>Our Solutions</h4>
               <ul>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Homes</a></li>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Commercial</a></li>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Housing Society</a></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Homes</Link></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Commercial</Link></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Housing Society</Link></li>
               </ul>
             </div>
 
@@ -61,15 +62,15 @@ const Footer: React.FC = () => {
               <h4>Quick Links</h4>
               <div className={styles.linkColumns}>
                 <ul>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">About Us</a></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">On-Grid Solar</a></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Off-Grid Solar</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">About Us</Link></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">On-Grid Solar</Link></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Off-Grid Solar</Link></li>
 
                 </ul>
                 <ul>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Water Heater</a></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Fencing</a></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Street Lights</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Water Heater</Link></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Fencing</Link></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Street Lights</Link></li>
                 </ul>
               </div>
             </div>

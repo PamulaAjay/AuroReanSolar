@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
+        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner"  width={58} height={48}/>
         <div className={styles.logoText}>
           <p>AUROREAN SOLAR <span>Innovating with every ray</span></p>
         </div>
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
             {activeDropdown === "solutions" && (
               <ul className={styles.dropdownMenu}>
                 <li><Link href="/off-grid"><FaSolarPanel className={styles.icon} /> Off-Grid</Link></li>
-                <li><Link href="/in-grid"><FaLightbulb className={styles.icon} /> On-Grid</Link></li>
+                <li><Link href="/on-grid"><FaLightbulb className={styles.icon} /> On-Grid</Link></li>
                 <li><Link href="/solar-water-heater"><FaWater className={styles.icon} /> Solar Water Heater</Link></li>
                 <li><Link href="/solar-fencing"><FaShieldAlt className={styles.icon} /> Solar Fencing</Link></li>
                 <li><Link href="/solar-street-lights"><FaRoad className={styles.icon} /> Solar Street Lights</Link></li>
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
 
       {/* Contact Number */}
       <div className={styles.contact}>
-        <FaPhoneAlt />+91 7995541071
+        <FaPhoneAlt />+91 79955 41071
       </div>
     </header>
   );

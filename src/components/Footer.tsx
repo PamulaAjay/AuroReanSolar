@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         <div className={styles.left}>
 
           <div className={styles.logoContainer}>
-        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
+        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" width={80} height={70}/>
         <div className={styles.logoText}>
           <p>AUROREAN SOLAR <span>Innovating with every ray</span></p>
         </div>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             Rooftop solar made simple. We don’t just sell solar — we give you peace of mind.
           </p>
           <p className={styles.contact}>
-            <FaPhoneAlt /> 7995541071
+            <FaPhoneAlt />79955 41071
             <span className={styles.email}>
             <MdEmail /> auroreansolar@gmail.com
           </span>

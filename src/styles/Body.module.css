@@ -1,0 +1,15 @@
+.bodyWrapper {
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+}
+
+.bodyWrapper h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+.bodyWrapper p {
+  font-size: 16px;
+  color: #666;
+}

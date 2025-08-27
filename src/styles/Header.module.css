@@ -1,0 +1,241 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: poppins, sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center; /* vertically center */
+  gap: 4px; /* space between image and text */
+}
+
+.logo {
+  width: 58px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.logoText p {
+  margin: 0;
+  padding-top: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText span {
+  font-size: 10px;
+  color: #555;
+}
+
+
+/* .logo {
+width: 50px;
+height: 40px;
+} */
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav ul li ul li a {
+  font-size: small;
+}
+
+.nav ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li a,
+.nav ul li span {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.nav ul li a:hover,
+.nav ul li span:hover {
+  color: #000080;
+}
+
+/* ===== Dropdown Menu (Vertical Card Style) ===== */
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  margin-top: 10px;
+  list-style: none;
+  padding: 10px 0 !important;
+  min-width: 220px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Show dropdown on hover (desktop) */
+.nav ul li:hover .dropdownMenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdownMenu li {
+  margin: 20px 12px; /* spacing between options */
+}
+
+.dropdownMenu li:not(:last-child) {
+  margin-bottom: 8px; 
+}
+
+.dropdownMenu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9ff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdownMenu li a:hover {
+  background: #e8ecff;
+  color: #000080;
+}
+
+/* ===== Contact Number ===== */
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000080;
+}
+
+/* ===== Hamburger Menu (Mobile) ===== */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center; /* Added to center all text */
+  }
+
+  .nav.active {
+    display: flex;
+    margin-top: 12px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%; /* Ensure full width */
+    padding: 0; /* Remove default padding */
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+    width: 100%; /* Make list items full width */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
+  .nav ul li a,
+  .nav ul li span {
+    justify-content: center; /* Center the content */
+    width: 100%; /* Make links full width */
+    padding: 0px 0; /* Add vertical padding */
+  }
+
+  .nav ul li ul li a {
+  justify-content: center; /* Center the content */
+    width: 100%; /* Make links full width */
+    padding: 8px 0; /* Add vertical padding */
+  }
+
+  .dropdownMenu {
+    position: static;
+    flex-direction: column;
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: auto;
+    align-items: center;
+    width: 100%; /* Full width dropdown */
+  }
+
+  .dropdownMenu li {
+    width: 90%;
+    margin: 8px 0;
+  }
+
+  .dropdownMenu li a {
+    justify-content: center;
+  }
+
+  .contact {
+    display: none;
+  }
+}
+
+/* ===== Icon Style ===== */
+.icon {
+  font-size: 18px;
+  color: #555;
+}
+
+.dropdownLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  justify-content: center; /* Center the dropdown labels */
+}

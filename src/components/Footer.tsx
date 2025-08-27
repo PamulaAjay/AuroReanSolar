@@ -7,6 +7,7 @@ import {
   FaFacebook,
   FaYoutube,
 } from "react-icons/fa";
+import Image from "next/image";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -19,7 +20,7 @@ const Footer: React.FC = () => {
         <div className={styles.left}>
 
           <div className={styles.logoContainer}>
-        <img className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
+        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
         <div className={styles.logoText}>
           <p>AUROREAN SOLAR <span>Innovating with every ray</span></p>
         </div>
@@ -50,9 +51,9 @@ const Footer: React.FC = () => {
             <div className={styles.center}>
               <h4>Our Solutions</h4>
               <ul>
-                <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Homes</a></li>
-                <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Commercial</a></li>
-                <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Housing Society</a></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Homes</a></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Commercial</a></li>
+                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Housing Society</a></li>
               </ul>
             </div>
 
@@ -60,15 +61,15 @@ const Footer: React.FC = () => {
               <h4>Quick Links</h4>
               <div className={styles.linkColumns}>
                 <ul>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">About Us</a></li>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">On-Grid Solar</a></li>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Off-Grid Solar</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">About Us</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">On-Grid Solar</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Off-Grid Solar</a></li>
 
                 </ul>
                 <ul>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Water Heater</a></li>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Fencing</a></li>
-                  <li><img src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Street Lights</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Water Heater</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Fencing</a></li>
+                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><a href="#">Solar Street Lights</a></li>
                 </ul>
               </div>
             </div>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../styles/Header.module.css";
+import Image from "next/image";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaHome, FaBuilding, FaCity, FaSolarPanel, FaLightbulb, FaWater, FaShieldAlt, FaRoad } from "react-icons/fa";
 
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
+        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner" />
         <div className={styles.logoText}>
           <p>AUROREAN SOLAR <span>Innovating with every ray</span></p>
         </div>
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
             className={styles.dropdown}
             onClick={() => toggleDropdown("rooftop")}
           >
-            <span className={styles.dropdownLabel}>Roof Top Solar <img src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
+            <span className={styles.dropdownLabel}>Roof Top Solar <Image  src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
             {activeDropdown === "rooftop" && (
               <ul className={styles.dropdownMenu}>
                 <li><a href="/residential"><FaHome className={styles.icon} /> Residential</a></li>
@@ -56,7 +57,7 @@ const Header: React.FC = () => {
             className={styles.dropdown}
             onClick={() => toggleDropdown("solutions")}
           >
-            <span className={styles.dropdownLabel}>Solar Solutions <img src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
+            <span className={styles.dropdownLabel}>Solar Solutions <Image src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
             {activeDropdown === "solutions" && (
               <ul className={styles.dropdownMenu}>
                 <li><a href="/off-grid"><FaSolarPanel className={styles.icon} /> Off-Grid</a></li>

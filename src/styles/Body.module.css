@@ -1,15 +1,257 @@
 .bodyWrapper {
-  padding: 2rem;
-  display: grid;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
-
-.bodyWrapper h2 {
-  color: #333;
-  font-size: 24px;
+.heroImage {
+  width: 100%;
+  height: 100% !important;
+   object-fit: cover !important;
+  object-position: center !important;
+}
+.heroContent {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+.heroContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.heroContent p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+.heroButtons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.heroButtons button:first-child {
+  background: #f7b500;
+  color: #fff;
+}
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-.bodyWrapper p {
-  font-size: 16px;
-  color: #666;
+.HeadingMain{
+  font-size: larger;
+  color: #000;
+  font-weight: 600;
 }
+
+.italic{
+  font-style: italic;
+}
+
+/* About */
+.about {
+  display: block;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 20px 0px 20px;
+  flex-wrap: wrap;
+}
+.aboutText {
+  flex: 1;
+}
+.aboutImage img {
+  padding-top: 20px;  
+  width: 100%;
+  height: 70vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.signature {
+  margin-top: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Values */
+.values {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+.valueCards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Solutions */
+.solutions {
+  padding: 60px 20px;
+  text-align: center;
+}
+.solutionGrid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+.solutionCard {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.solutionCard img {
+  width: 100%;
+  height: 200px;
+    object-fit: cover;
+  background-position: center;
+}
+.solutionCard h3 {
+  padding: 15px;
+}
+
+/* Why Choose Us */
+.whyChoose {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+.whyChoose ul {
+  list-style: none;
+  padding: 0;
+}
+.whyChoose li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+/* CTA */
+.cta {
+  padding: 20px 0px;
+  text-align: center;
+  color: #000;
+}
+.cta button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #f7b500;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card img {
+  width: 60px;        /* fixed size so all icons look neat */
+  height: 60px;
+  object-fit: contain; /* keeps proportions */
+  margin: 0 auto 10px; /* center horizontally + spacing below */
+  display: block;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .solutionCard {
+    width: 100%;
+  }
+}
+
+
+.heroOverlay {
+  position: absolute;
+  top: 10%;
+  right: 4%;
+  background: rgba(44, 43, 43, 0.5); /* semi-transparent background */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.heroOverlay h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.heroOverlay p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.heroOverlay .subText {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.heroOverlay .subText span {
+  font-weight: bold;
+  color: #00c853; /* green highlight like your example */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .heroOverlay {
+    top: 10%;
+    left: 5%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .heroOverlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .heroOverlay p {
+    font-size: 1rem;
+  }
+
+   .aboutImage img {
+    height: auto !important;
+  }
+  .solutionCard img {
+    height: auto !important;
+    max-height: 250px; /* optional */
+    object-fit: fill;
+
+  }
+}
+

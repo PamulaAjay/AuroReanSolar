@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,11 +14,29 @@ const Header: React.FC = () => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
   };
 
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1050) {
+        setMobileMenuOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="Banner"  width={58} height={48}/>
+        <Link href="/" className={styles.brandLink} onClick={closeMenu} aria-label="AuroRean Solar home">
+          <Image className={styles.logo} src="/images/AuroReanSolar.png" alt="AuroRean Solar logo" width={58} height={48}/>
+        </Link>
         <div className={styles.logoText}>
           <p>AUROREAN SOLAR <span>Innovating with every ray</span></p>
         </div>
@@ -26,29 +44,33 @@ const Header: React.FC = () => {
 
 
       {/* Hamburger Icon (mobile only) */}
-      <div
+      <button
+        type="button"
         className={styles.hamburger}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-expanded={mobileMenuOpen}
+        aria-controls="primary-navigation"
+        aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
       >
-        ☰
-      </div>
+        <span aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
+      </button>
 
       {/* Navigation */}
-      <nav className={`${styles.nav} ${mobileMenuOpen ? styles.active : ""}`}>
+      <nav id="primary-navigation" className={`${styles.nav} ${mobileMenuOpen ? styles.active : ""}`}>
         <ul>
-          <li><Link href="/">Home</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Home</Link></li>
 
           {/* Roof Top Solar */}
           <li
             className={styles.dropdown}
             onClick={() => toggleDropdown("rooftop")}
           >
-            <span className={styles.dropdownLabel}>Roof Top Solar <Image  src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
+            <button type="button" className={styles.dropdownLabel} aria-expanded={activeDropdown === "rooftop"}>Roof Top Solar <Image src="/images/down_arrow.png" alt="" width="16" height="16" /></button>
             {activeDropdown === "rooftop" && (
               <ul className={styles.dropdownMenu}>
-                <li><Link href="/residential"><FaHome className={styles.icon} /> Residential</Link></li>
-                <li><Link href="/commercial"><FaBuilding className={styles.icon} /> Commercial</Link></li>
-                <li><Link href="/housing-society"><FaCity className={styles.icon} /> Housing Society</Link></li>
+                <li><Link href="/residential" onClick={closeMenu}><FaHome className={styles.icon} /> Residential</Link></li>
+                <li><Link href="/commercial" onClick={closeMenu}><FaBuilding className={styles.icon} /> Commercial</Link></li>
+                <li><Link href="/housing-society" onClick={closeMenu}><FaCity className={styles.icon} /> Housing Society</Link></li>
               </ul>
             )}
           </li>
@@ -58,27 +80,27 @@ const Header: React.FC = () => {
             className={styles.dropdown}
             onClick={() => toggleDropdown("solutions")}
           >
-            <span className={styles.dropdownLabel}>Solar Solutions <Image src="/images/down_arrow.png" alt="Banner" width="16" height="16" /></span>
+            <button type="button" className={styles.dropdownLabel} aria-expanded={activeDropdown === "solutions"}>Solar Solutions <Image src="/images/down_arrow.png" alt="" width="16" height="16" /></button>
             {activeDropdown === "solutions" && (
               <ul className={styles.dropdownMenu}>
-                <li><Link href="/off-grid"><FaSolarPanel className={styles.icon} /> Off-Grid</Link></li>
-                <li><Link href="/on-grid"><FaLightbulb className={styles.icon} /> On-Grid</Link></li>
-                <li><Link href="/solar-water-heater"><FaWater className={styles.icon} /> Solar Water Heater</Link></li>
-                <li><Link href="/solar-fencing"><FaShieldAlt className={styles.icon} /> Solar Fencing</Link></li>
-                <li><Link href="/solar-street-lights"><FaRoad className={styles.icon} /> Solar Street Lights</Link></li>
+                <li><Link href="/off-grid" onClick={closeMenu}><FaSolarPanel className={styles.icon} /> Off-Grid</Link></li>
+                <li><Link href="/on-grid" onClick={closeMenu}><FaLightbulb className={styles.icon} /> On-Grid</Link></li>
+                <li><Link href="/solar-water-heater" onClick={closeMenu}><FaWater className={styles.icon} /> Solar Water Heater</Link></li>
+                <li><Link href="/solar-fencing" onClick={closeMenu}><FaShieldAlt className={styles.icon} /> Solar Fencing</Link></li>
+                <li><Link href="/solar-street-lights" onClick={closeMenu}><FaRoad className={styles.icon} /> Solar Street Lights</Link></li>
               </ul>
             )}
           </li>
 
-          <li><Link href="/blogs">Blogs</Link></li>
-          <li><Link href="/contact">Contact Us</Link></li>
+          <li><Link href="/blogs" onClick={closeMenu}>Blogs</Link></li>
+          <li><Link href="/contact" onClick={closeMenu}>Contact Us</Link></li>
         </ul>
       </nav>
 
       {/* Contact Number */}
-      <div className={styles.contact}>
+      <a className={styles.contact} href="tel:+917995541071">
         <FaPhoneAlt />+91 79955 41071
-      </div>
+      </a>
     </header>
   );
 };

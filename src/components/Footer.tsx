@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           
           <h4 className={styles.follow}>Follow Us</h4>
           <div className={styles.socials}>
-            <Link href="https://web.whatsapp.com/" target="_blank"><FaWhatsapp /></Link>
+            <Link href="https://wa.me/917995541071" target="_blank" aria-label="WhatsApp"><FaWhatsapp /></Link>
             <Link href="https://www.instagram.com/" target="_blank"><FaInstagram /></Link>
             <Link href="https://www.facebook.com/" target="_blank"><FaFacebook /></Link>
             <Link href="https://www.youtube.com/@myloveforyou" target="_blank"><FaYoutube /></Link>
@@ -52,9 +52,9 @@ const Footer: React.FC = () => {
             <div className={styles.center}>
               <h4>Our Solutions</h4>
               <ul>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Homes</Link></li>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Commercial</Link></li>
-                <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Housing Society</Link></li>
+                <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/residential">Homes</Link></li>
+                <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/commercial">Commercial</Link></li>
+                <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/housing-society">Housing Society</Link></li>
               </ul>
             </div>
 
@@ -62,15 +62,15 @@ const Footer: React.FC = () => {
               <h4>Quick Links</h4>
               <div className={styles.linkColumns}>
                 <ul>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">About Us</Link></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">On-Grid Solar</Link></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Off-Grid Solar</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/">About Us</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/on-grid">On-Grid Solar</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/off-grid">Off-Grid Solar</Link></li>
 
                 </ul>
                 <ul>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Water Heater</Link></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Fencing</Link></li>
-                  <li><Image  src="/images/right_arrow.png" alt="Banner" width="20" height="20" /><Link href="#">Solar Street Lights</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/solar-water-heater">Solar Water Heater</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/solar-fencing">Solar Fencing</Link></li>
+                  <li><Image src="/images/right_arrow.png" alt="" width="20" height="20" /><Link href="/solar-street-lights">Solar Street Lights</Link></li>
                 </ul>
               </div>
             </div>

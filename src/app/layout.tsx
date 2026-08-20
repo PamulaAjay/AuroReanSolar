@@ -1,5 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
+import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -8,19 +9,17 @@ const poppins = Poppins({
   variable: "--font-poppins",          // custom CSS variable
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "AuroRean Solar",
-  description: "Awesome app with Poppins font",
-   icons: {
-    icon: "/AuroReanSolar.png",          // default
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+  description: "Solar energy solutions from AuroRean Solar",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

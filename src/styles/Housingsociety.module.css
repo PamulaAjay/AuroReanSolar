@@ -1,5 +1,7 @@
 .container {
-  padding: 30px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 36px clamp(20px, 4vw, 48px) 64px;
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -76,6 +78,7 @@
 /* Main content column */
 .mainContent {
   flex: 3;
+  min-width: 0;
 }
 
 /* Headings inside main */
@@ -138,6 +141,7 @@
 
 .table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
   font-size: 0.95rem;
 }
@@ -179,8 +183,18 @@
 }
 
 @media (max-width: 576px) {
+  .container {
+    padding: 24px 16px 48px;
+  }
+
+  .category {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
   .title {
-    font-size: 22px;
+    font-size: clamp(24px, 8vw, 30px);
+    line-height: 1.25;
   }
 
   .sidebar h3 {
@@ -190,6 +204,16 @@
   .mainContent p,
   .mainContent li {
     font-size: 14px;
+  }
+
+  .mainContent h2 {
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  .mainContent ul {
+    margin-left: 0;
+    padding-left: 20px;
   }
 
        .image {

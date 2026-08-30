@@ -1,16 +1,13 @@
 "use client";
 import React from "react";
 import styles from "../../styles/Commercial.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const CommercialSolar: React.FC = () => {
     return (
         <div className={styles.container}>
-            {/* Back to home */}
-            <Link href="/" className={styles.backLink}>
-                Back to Home
-            </Link>
+            <Link href="/" className={styles.backLink}>← Back to Home</Link>
 
             {/* Category */}
             <span className={styles.category}>Commercial</span>

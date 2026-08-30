@@ -256,6 +256,45 @@
   text-decoration: none;
 }
 
+:global(html[data-theme="dark"]) .page {
+  color: var(--text-primary);
+  background: var(--background);
+}
+
+:global(html[data-theme="dark"]) .sectionHeading h2,
+:global(html[data-theme="dark"]) .latestHeading h2,
+:global(html[data-theme="dark"]) .featuredContent h2,
+:global(html[data-theme="dark"]) .cardContent h3 {
+  color: var(--text-primary);
+}
+
+:global(html[data-theme="dark"]) .featuredContent > p,
+:global(html[data-theme="dark"]) .cardContent > p,
+:global(html[data-theme="dark"]) .meta {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .featuredCard,
+:global(html[data-theme="dark"]) .card {
+  border-color: var(--border-color);
+  background: var(--surface);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+:global(html[data-theme="dark"]) .cardContent .meta {
+  border-color: var(--border-color);
+}
+
+:global(html[data-theme="dark"]) .category {
+  color: #8fd8ad;
+  background: #1a3828;
+}
+
+:global(html[data-theme="dark"]) .consultLink,
+:global(html[data-theme="dark"]) .readMore {
+  color: var(--brand-green);
+}
+
 @media (max-width: 900px) {
   .featuredCard {
     grid-template-columns: 1fr;

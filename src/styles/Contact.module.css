@@ -394,6 +394,58 @@
   text-decoration: none;
 }
 
+:global(html[data-theme="dark"]) .page {
+  color: var(--text-primary);
+  background: var(--background);
+}
+
+:global(html[data-theme="dark"]) .infoColumn > h2,
+:global(html[data-theme="dark"]) .locationHeading h2,
+:global(html[data-theme="dark"]) .detailCard h3,
+:global(html[data-theme="dark"]) .detailCard a,
+:global(html[data-theme="dark"]) .detailCard strong,
+:global(html[data-theme="dark"]) .formHeading h2,
+:global(html[data-theme="dark"]) .locationCard h3,
+:global(html[data-theme="dark"]) .form label {
+  color: var(--text-primary);
+}
+
+:global(html[data-theme="dark"]) .intro,
+:global(html[data-theme="dark"]) .detailCard p,
+:global(html[data-theme="dark"]) .formHeading p,
+:global(html[data-theme="dark"]) .privacy,
+:global(html[data-theme="dark"]) .locationCard span {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .detailCard,
+:global(html[data-theme="dark"]) .form,
+:global(html[data-theme="dark"]) .locationCard {
+  border-color: var(--border-color);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .form {
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24);
+}
+
+:global(html[data-theme="dark"]) .form input,
+:global(html[data-theme="dark"]) .form select,
+:global(html[data-theme="dark"]) .form textarea {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  background: var(--surface-soft);
+}
+
+:global(html[data-theme="dark"]) .locations {
+  background: var(--surface-soft);
+}
+
+:global(html[data-theme="dark"]) .detailIcon {
+  color: #8fd8ad;
+  background: #1a3828;
+}
+
 @media (max-width: 900px) {
   .contactSection {
     grid-template-columns: 1fr;

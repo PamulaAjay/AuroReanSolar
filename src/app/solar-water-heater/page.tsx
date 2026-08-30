@@ -7,10 +7,7 @@ import Link from "next/link";
 const SolarWaterHeater: React.FC = () => {
   return (
     <div className={styles.container}>
-      {/* Back to blogs */}
-      <Link href="/" className={styles.backLink}>
-        Back to Home
-      </Link>
+      <Link href="/" className={styles.backLink}>← Back to Home</Link>
 
       {/* Category */}
       <span className={styles.category}>General</span>

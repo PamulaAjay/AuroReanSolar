@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaClock, FaRegCalendarAlt } from "react-icons/fa";
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Blogs.module.css";
 
@@ -73,7 +72,6 @@ export default function BlogsPage() {
 
   return (
     <>
-      <Header />
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>

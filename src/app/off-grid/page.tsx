@@ -7,9 +7,7 @@ import Link from "next/link";
 const OffGridSolar: React.FC = () => {
   return (
     <div className={styles.container}>
-      {/* Back to blogs */}
-      {/* <Image src='/images/left_arrow.png' alt="back icon" width={14} height={14}/> */}
-      <Link href="/" className={styles.backLink}>Back to Home</Link>
+      <Link href="/" className={styles.backLink}>← Back to Home</Link>
 
       {/* Category */}
       <span className={styles.category}>General</span>

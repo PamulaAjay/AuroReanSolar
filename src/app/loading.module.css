@@ -1,0 +1,84 @@
+.loader {
+  display: grid;
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 32px 20px;
+  place-items: center;
+  color: #173522;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(244, 189, 67, 0.13), transparent 230px),
+    #f7faf7;
+  font-family: Poppins, sans-serif;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logoWrap {
+  position: relative;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 22px;
+  place-items: center;
+}
+
+.logoWrap img {
+  width: 66px;
+  height: auto;
+  object-fit: contain;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(23, 97, 61, 0.13);
+  border-top-color: #17613d;
+  border-right-color: #f4bd43;
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+
+.content strong {
+  font-size: clamp(17px, 3vw, 21px);
+  line-height: 1.4;
+}
+
+.message {
+  margin-top: 6px;
+  color: #718077;
+  font-size: 13px;
+}
+
+:global(html[data-theme="dark"]) .loader {
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(244, 189, 67, 0.1), transparent 230px),
+    var(--background);
+}
+
+:global(html[data-theme="dark"]) .message {
+  color: var(--text-secondary);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .loader {
+    min-height: calc(100vh - 68px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.8s;
+  }
+}

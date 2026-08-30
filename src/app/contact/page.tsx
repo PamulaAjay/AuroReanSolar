@@ -7,7 +7,6 @@ import {
   FaPhoneAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ContactForm from "../../components/ContactForm";
 import styles from "../../styles/Contact.module.css";
@@ -38,7 +37,6 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <>
-      <Header />
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
@@ -105,7 +103,7 @@ export default function ContactPage() {
             <h2>Serving Telangana from four locations</h2>
           </div>
           <div className={styles.locationGrid}>
-            {["Hyderabad", "Peddapalli", "Karimnagar", "Telangana"].map((location, index) => (
+            {["Hyderabad", "Korutla", "Karimnagar", "Telangana"].map((location, index) => (
               <div className={styles.locationCard} key={location}>
                 <FaMapMarkerAlt aria-hidden="true" />
                 <div>

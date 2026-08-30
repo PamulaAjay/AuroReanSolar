@@ -55,19 +55,27 @@ margin-bottom: 8px;
 .contact {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px 24px;
   margin: 6px 0;
   font-size: 14px;
   flex-wrap: wrap;
 }
 
-.email {
-  display: flex;
+.contactItem {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 6px 0;
-  font-size: 14px;
-  padding-left: 16px;
+  min-width: 0;
+  color: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contactItem svg {
+  flex: 0 0 auto;
+}
+
+.contactItem span {
   overflow-wrap: anywhere;
 }
 
@@ -212,12 +220,13 @@ margin-bottom: 8px;
   }
 
   .contact {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    gap: 10px;
   }
 
-  .email {
-    padding-left: 0;
+  .contactItem {
+    width: fit-content;
   }
 
   .copyright {

@@ -7,8 +7,8 @@
   justify-content: space-between;
   min-height: 72px;
   padding: 10px clamp(18px, 3vw, 42px);
-  border-bottom: 1px solid #e4e7e3;
-  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface);
   font-family: Poppins, sans-serif;
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  color: #16172b;
+  color: var(--text-primary);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.25;
@@ -47,7 +47,7 @@
 }
 
 .logoText span {
-  color: #59615c;
+  color: var(--text-secondary);
   font-size: 9px;
   font-weight: 500;
 }
@@ -72,7 +72,7 @@
 .nav a,
 .dropdownLabel {
   border: 0;
-  color: #333a35;
+  color: var(--text-primary);
   background: transparent;
   font: inherit;
   font-size: 13px;
@@ -118,9 +118,9 @@
   min-width: 235px;
   margin: 0;
   padding: 9px;
-  border: 1px solid #e7ebe7;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 14px 35px rgba(18, 43, 28, 0.14);
   list-style: none;
 }
@@ -135,12 +135,12 @@
   gap: 10px;
   padding: 11px 12px;
   border-radius: 8px;
-  background: #f7faf7;
+  background: var(--surface-soft);
   font-size: 12px;
 }
 
 .dropdownMenu a:hover {
-  background: #eaf5ee;
+  background: var(--surface-muted);
 }
 
 .icon {
@@ -152,7 +152,7 @@
 .contact {
   flex: 0 0 auto;
   gap: 7px;
-  color: #0e0a38;
+  color: var(--text-primary);
   font-size: clamp(12px, 1.1vw, 15px);
   font-weight: 700;
   text-decoration: none;
@@ -164,13 +164,41 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid #dfe5df;
+  border: 1px solid var(--border-color);
   border-radius: 9px;
-  color: #143b27;
-  background: #f7faf7;
+  color: var(--brand-green);
+  background: var(--surface-soft);
   font-size: 27px;
   line-height: 1;
   cursor: pointer;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 9px;
+}
+
+.themeToggle {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  place-items: center;
+  color: var(--brand-green);
+  background: var(--surface-soft);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.themeToggle:hover {
+  color: #17321f;
+  background: var(--brand-gold);
+  transform: rotate(10deg);
 }
 
 @media (max-width: 1050px) {
@@ -196,8 +224,8 @@
     width: 100%;
     max-height: calc(100vh - 68px);
     overflow-y: auto;
-    border-top: 1px solid #e5e8e5;
-    background: #fff;
+    border-top: 1px solid var(--border-color);
+    background: var(--surface);
     box-shadow: 0 16px 30px rgba(18, 43, 28, 0.13);
     overscroll-behavior: contain;
   }
@@ -217,7 +245,7 @@
   .nav > ul > li {
     width: 100%;
     margin: 0;
-    border-bottom: 1px solid #edf0ed;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .nav > ul > li > a,
@@ -236,7 +264,7 @@
     border: 0;
     border-radius: 8px;
     box-shadow: none;
-    background: #f7faf7;
+    background: var(--surface-soft);
   }
 
   .dropdownMenu a {
@@ -256,16 +284,58 @@
   }
 
   .logoText p {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .logoText span {
-    font-size: 8px;
+    font-size: 7px;
+  }
+
+  .headerActions {
+    gap: 6px;
+  }
+
+  .themeToggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
   }
 }
 
-@media (max-width: 350px) {
-  .logoText {
-    display: none;
+@media (max-width: 340px) {
+  .header {
+    padding-inline: 8px;
+  }
+
+  .logoContainer {
+    gap: 2px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 38px;
+  }
+
+  .logoText p {
+    font-size: 10px;
+  }
+
+  .logoText span {
+    font-size: 6.5px;
+  }
+
+  .headerActions {
+    gap: 4px;
+  }
+
+  .themeToggle,
+  .hamburger {
+    width: 36px;
+    height: 36px;
   }
 }

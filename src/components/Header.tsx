@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaMoon, FaPhoneAlt, FaSun } from "react-icons/fa";
 import { FaHome, FaBuilding, FaCity, FaSolarPanel, FaLightbulb, FaWater, FaShieldAlt, FaRoad } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleDropdown = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
@@ -20,6 +21,9 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
+    const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+    setTheme(currentTheme);
+
     const handleResize = () => {
       if (window.innerWidth > 1050) {
         setMobileMenuOpen(false);
@@ -30,6 +34,13 @@ const Header: React.FC = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = nextTheme;
+    localStorage.setItem("aurorean-theme", nextTheme);
+    setTheme(nextTheme);
+  };
 
   return (
     <header className={styles.header}>
@@ -42,18 +53,6 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-
-      {/* Hamburger Icon (mobile only) */}
-      <button
-        type="button"
-        className={styles.hamburger}
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-expanded={mobileMenuOpen}
-        aria-controls="primary-navigation"
-        aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-      >
-        <span aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
-      </button>
 
       {/* Navigation */}
       <nav id="primary-navigation" className={`${styles.nav} ${mobileMenuOpen ? styles.active : ""}`}>
@@ -97,10 +96,30 @@ const Header: React.FC = () => {
         </ul>
       </nav>
 
-      {/* Contact Number */}
-      <a className={styles.contact} href="tel:+917995541071">
-        <FaPhoneAlt />+91 79955 41071
-      </a>
+      <div className={styles.headerActions}>
+        <a className={styles.contact} href="tel:+917995541071">
+          <FaPhoneAlt />+91 79955 41071
+        </a>
+        <button
+          type="button"
+          className={styles.themeToggle}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+          title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+        >
+          {theme === "light" ? <FaMoon aria-hidden="true" /> : <FaSun aria-hidden="true" />}
+        </button>
+        <button
+          type="button"
+          className={styles.hamburger}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="primary-navigation"
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        >
+          <span aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
+        </button>
+      </div>
     </header>
   );
 };

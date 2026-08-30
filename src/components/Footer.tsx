@@ -30,12 +30,16 @@ const Footer: React.FC = () => {
           <p className={styles.tagline}>
             Rooftop solar made simple. We don’t just sell solar — we give you peace of mind.
           </p>
-          <p className={styles.contact}>
-            <FaPhoneAlt />79955 41071
-            <span className={styles.email}>
-            <MdEmail /> auroreansolar@gmail.com
-          </span>
-          </p>
+          <div className={styles.contact}>
+            <a className={styles.contactItem} href="tel:+917995541071">
+              <FaPhoneAlt aria-hidden="true" />
+              <span>+91 79955 41071</span>
+            </a>
+            <a className={styles.contactItem} href="mailto:auroreansolar@gmail.com">
+              <MdEmail aria-hidden="true" />
+              <span>auroreansolar@gmail.com</span>
+            </a>
+          </div>
           
           <h4 className={styles.follow}>Follow Us</h4>
           <div className={styles.socials}>
@@ -79,7 +83,7 @@ const Footer: React.FC = () => {
           <div className={styles.address}>
             <h4>Address</h4>
             <p>
-              Head Office: Hyderabad | Peddapalli | Karimnagar | Telangana <br/>
+              Head Office: Hyderabad | Korutla | Karimnagar | Telangana <br/>
               Office number: +91 73370 69230
             </p>
           </div>

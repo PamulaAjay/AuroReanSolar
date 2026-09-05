@@ -4,7 +4,7 @@ import styles from "../styles/Footer.module.css";
 import {
   FaWhatsapp,
   FaInstagram,
-  FaFacebook,
+  // FaFacebook,
   FaYoutube,
 } from "react-icons/fa";
 import Image from "next/image";

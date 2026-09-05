@@ -7,11 +7,36 @@
 }
 
 .backLink {
-  font-size: 14px;
-  color: #555;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d8dfd8;
+  border-radius: 50%;
+  color: #17321f;
+  background: #f2f7f3;
+  font-size: 0;
+  line-height: 1;
   text-decoration: none;
-  display: inline-block;
-  margin-bottom: 10px;
+  vertical-align: middle;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.backLink::after {
+  width: 9px;
+  height: 9px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: translateX(2px) rotate(135deg);
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  border-color: #42745a;
+  background: #e5f0e8;
+  transform: translateX(-2px);
 }
 
 .category {

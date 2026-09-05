@@ -257,6 +257,11 @@
     font-size: 14px;
   }
 
+  .nav > ul > li > a {
+    display: flex;
+    align-items: center;
+  }
+
   .dropdownMenu {
     position: static;
     min-width: 0;

@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
           <div className={styles.socials}>
             <Link href="https://wa.me/917995541071" target="_blank" aria-label="WhatsApp"><FaWhatsapp /></Link>
             <Link href="https://www.instagram.com/" target="_blank"><FaInstagram /></Link>
-            <Link href="https://www.facebook.com/" target="_blank"><FaFacebook /></Link>
+            {/* <Link href="https://www.facebook.com/" target="_blank"><FaFacebook /></Link> */}
             <Link href="https://www.youtube.com/@myloveforyou" target="_blank"><FaYoutube /></Link>
           </div>
         </div>

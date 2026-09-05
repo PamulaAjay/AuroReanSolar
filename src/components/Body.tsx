@@ -310,11 +310,7 @@ export default function HomeBody() {
       </section>
 
       <section className={styles.introSection} id="about-solar">
-        <div className={`${styles.introVisual} ${styles.reveal}`} data-home-reveal>
-          <div className={styles.introImageLarge}>
-            <Image src="/images/cover.jpg" alt="Solar panels installed for clean energy generation" width={1004} height={590} sizes="(max-width: 900px) 100vw, 48vw" />
-          </div>
-        </div>
+       
 
         <div className={`${styles.introCopy} ${styles.reveal}`} data-home-reveal>
           <span className={styles.sectionLabel}>About AuroRean Solar</span>
@@ -332,6 +328,12 @@ export default function HomeBody() {
             <span><FaCheck /> After-sales assistance</span>
           </div>
           <Link href="/contact" className={styles.textLink}>Start a conversation <FaArrowRight /></Link>
+        </div>
+
+         <div className={`${styles.introVisual} ${styles.reveal}`} data-home-reveal>
+          <div className={styles.introImageLarge}>
+            <Image src="/images/cover.jpg" alt="Solar panels installed for clean energy generation" width={1004} height={590} sizes="(max-width: 900px) 100vw, 48vw" />
+          </div>
         </div>
       </section>
 

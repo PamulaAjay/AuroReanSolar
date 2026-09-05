@@ -522,8 +522,8 @@
   position: relative;
   overflow: hidden;
   padding: clamp(80px, 9vw, 120px) max(24px, calc((100% - 1180px) / 2));
-  color: #fff;
-  background: #0b2c1d;
+  color: #0e0a38;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f5f7 55%, #e4e8ed 100%);
 }
 
 .impactBackdrop {
@@ -531,7 +531,7 @@
   inset: 0;
   opacity: 0.16;
   background:
-    linear-gradient(90deg, #0b2c1d 0%, transparent 55%, #0b2c1d 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 245, 247, 0.14) 55%, rgba(228, 232, 237, 0.9) 100%),
     url("/images/Ongrid_linediagram.jpg") center / cover;
 }
 
@@ -551,17 +551,18 @@
 
 .impactHeading .sectionLabel {
   grid-column: 1 / -1;
+  color: #9a5700;
 }
 
 .impactHeading h2 {
   margin: 0;
-  color: #fff;
+  color: #0e0a38;
 }
 
 .impactHeading p {
   max-width: 480px;
   margin: 0 0 6px;
-  color: rgba(255, 255, 255, 0.64);
+  color: rgba(14, 10, 56, 0.72);
   font-size: 14px;
   line-height: 1.8;
 }
@@ -569,13 +570,13 @@
 .impactGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(14, 10, 56, 0.18);
+  border-bottom: 1px solid rgba(14, 10, 56, 0.18);
 }
 
 .impactItem {
   padding: 30px clamp(16px, 2.2vw, 32px);
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-right: 1px solid rgba(14, 10, 56, 0.18);
 }
 
 .impactItem:last-child {
@@ -584,7 +585,7 @@
 
 .impactItem strong {
   display: block;
-  color: #f3bd41;
+  color: #9a5700;
   font-size: clamp(35px, 4vw, 54px);
   font-weight: 500;
   line-height: 1;
@@ -593,7 +594,7 @@
 .impactItem span {
   display: block;
   margin-top: 12px;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(14, 10, 56, 0.72);
   font-size: 11px;
   line-height: 1.6;
 }
@@ -846,7 +847,7 @@
 .finalCtaShade {
   position: absolute;
   inset: 0;
-  background: rgba(3, 25, 15, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(243, 245, 247, 0.86) 55%, rgba(228, 232, 237, 0.9) 100%);
 }
 
 .finalCtaContent {
@@ -856,16 +857,36 @@
 }
 
 .finalCta h2 {
-  color: #fff;
+  color: #0e0a38;
   font-size: clamp(39px, 5.6vw, 68px);
 }
 
 .finalCta p {
   max-width: 640px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(14, 10, 56, 0.76);
   font-size: 14px;
   line-height: 1.8;
+}
+
+.finalCta .sectionLabel {
+  color: #9a5700;
+}
+
+.finalCta .primaryButton {
+  color: #fff;
+  background: #0e0a38;
+}
+
+.finalCta .secondaryButton {
+  border-color: rgba(14, 10, 56, 0.42);
+  color: #0e0a38;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.finalCta .secondaryButton:hover {
+  border-color: #0e0a38;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .reveal {

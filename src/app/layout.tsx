@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "AuroRean Solar",
   description: "Solar energy solutions from AuroRean Solar",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/AuroReanSolar.png", // path to your favicon
   },
 };
 

@@ -3,14 +3,19 @@ import React from "react";
 import styles from "../../styles/Solarfencing.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import ServicePageNavigation from "../../components/ServicePageNavigation";
 
 const SolarFencing: React.FC = () => {
     return (
         <div className={styles.container}>
-            <Link href="/" className={styles.backLink}>← Back to Home</Link>
+            <Link href="/" className={styles.backLink} aria-label="Back to Home" title="Back to Home">←</Link>
 
             {/* Category */}
             <span className={styles.category}>Security</span>
+            <ServicePageNavigation
+                previous={{ href: "/solar-water-heater", label: "Solar Water Heater" }}
+                next={{ href: "/solar-street-lights", label: "Solar Street Lights" }}
+            />
 
             {/* Title */}
             <h1 className={styles.title}>

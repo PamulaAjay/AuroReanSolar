@@ -3,14 +3,19 @@ import React from "react";
 import styles from "../../styles/Commercial.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import ServicePageNavigation from "../../components/ServicePageNavigation";
 
 const CommercialSolar: React.FC = () => {
     return (
         <div className={styles.container}>
-            <Link href="/" className={styles.backLink}>← Back to Home</Link>
+            <Link href="/" className={styles.backLink} aria-label="Back to Home" title="Back to Home">←</Link>
 
             {/* Category */}
             <span className={styles.category}>Commercial</span>
+            <ServicePageNavigation
+                previous={{ href: "/residential", label: "Residential Solar" }}
+                next={{ href: "/housing-society", label: "Housing Society Solar" }}
+            />
 
             {/* Title */}
             <h1 className={styles.title}>

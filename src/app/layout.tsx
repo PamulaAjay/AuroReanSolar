@@ -21,10 +21,63 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "AuroRean Solar",
-  description: "Solar energy solutions from AuroRean Solar",
+  metadataBase: new URL("https://auroreansolar.com"),
+
+  title: {
+    default: "Aurorean Solar | Solar Energy Solutions",
+    template: "%s | Aurorean Solar",
+  },
+
+  description:
+    "Aurorean Solar provides reliable solar energy solutions for residential, commercial, and industrial customers.",
+
+  applicationName: "Aurorean Solar",
+
+  authors: [
+    {
+      name: "Aurorean Solar",
+      url: "https://auroreansolar.com",
+    },
+  ],
+
+  creator: "Aurorean Solar",
+  publisher: "Aurorean Solar",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://auroreansolar.com",
+    siteName: "Aurorean Solar",
+    title: "Aurorean Solar | Solar Energy Solutions",
+    description:
+      "Aurorean Solar provides reliable solar energy solutions for residential, commercial, and industrial customers.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Aurorean Solar | Solar Energy Solutions",
+    description:
+      "Aurorean Solar provides reliable solar energy solutions for residential, commercial, and industrial customers.",
+  },
+
   icons: {
-    icon: "/AuroReanSolar.png", // path to your favicon
+    icon: "/AuroReanSolar.png",
   },
 };
 

@@ -302,15 +302,26 @@
   text-align: center;
 }
 
-.success {
+.success,
+.error {
   margin-top: 16px;
   padding: 13px 15px;
-  border: 1px solid #b9dfc8;
+  border: 1px solid;
   border-radius: 8px;
-  color: #155d38;
-  background: #edf8f1;
   font-size: 12px;
   line-height: 1.6;
+}
+
+.success {
+  border-color: #b9dfc8;
+  color: #155d38;
+  background: #edf8f1;
+}
+
+.error {
+  border-color: #efc3c3;
+  color: #8a2727;
+  background: #fdf1f1;
 }
 
 .locations {

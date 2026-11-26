@@ -1,15 +1,42 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { submitContactEnquiry } from "../api/contact";
 import styles from "../styles/Contact.module.css";
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState<Awaited<ReturnType<typeof submitContactEnquiry>> | null>(null);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
-    event.currentTarget.reset();
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    const fields = new FormData(form);
+    const readField = (name: string) => String(fields.get(name) ?? "").trim();
+
+    setIsSubmitting(true);
+    setFeedback(null);
+
+    try {
+      const result = await submitContactEnquiry({
+        full_name: readField("name"),
+        email: readField("email"),
+        phone: readField("phone"),
+        property_type: readField("propertyType"),
+        city: readField("city"),
+        average_monthly_electricity_bill: readField("electricityBill") || undefined,
+        how_can_we_help: readField("message") || undefined,
+      });
+
+      setFeedback(result);
+      if (result.success) form.reset();
+    } catch {
+      setFeedback({ success: false, message: "We couldn’t submit your enquiry. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -59,11 +86,11 @@ export default function ContactForm() {
           Average monthly electricity bill
           <select name="electricityBill" defaultValue="">
             <option value="" disabled>Select a range</option>
-            <option>Below ₹2,000</option>
-            <option>₹2,000 – ₹5,000</option>
-            <option>₹5,000 – ₹10,000</option>
-            <option>₹10,000 – ₹25,000</option>
-            <option>Above ₹25,000</option>
+            <option value="1000">Below ₹2,000</option>
+            <option value="3500">₹2,000 – ₹5,000</option>
+            <option value="7500">₹5,000 – ₹10,000</option>
+            <option value="17500">₹10,000 – ₹25,000</option>
+            <option value="25001">Above ₹25,000</option>
           </select>
         </label>
       </div>
@@ -77,12 +104,14 @@ export default function ContactForm() {
         />
       </label>
 
-      <button type="submit">Request a free consultation</button>
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Submitting…" : "Request a free consultation"}
+      </button>
       <p className={styles.privacy}>By submitting, you agree to be contacted about your enquiry.</p>
 
-      {submitted && (
-        <div className={styles.success} role="status">
-          Thank you! The form is ready. Connect it to your email or CRM endpoint to receive submissions.
+      {feedback && (
+        <div className={feedback.success ? styles.success : styles.error} role={feedback.success ? "status" : "alert"}>
+          {feedback.message}
         </div>
       )}
     </form>

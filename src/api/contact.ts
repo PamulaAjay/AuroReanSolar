@@ -23,13 +23,14 @@ const submissionError = {
 export async function submitContactEnquiry(
   enquiry: ContactEnquiry,
 ): Promise<ContactSubmissionResult> {
-  const apiUrl = process.env.CONTACT_API_URL;
+  const apiBaseUrl = process.env.API_BASE_URL;
 
-  if (!apiUrl) {
+  if (!apiBaseUrl) {
     return submissionError;
   }
 
   try {
+    const apiUrl = new URL("/api/contact/", apiBaseUrl);
     const response = await fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },

@@ -1,4 +1,4 @@
-"use server";
+import axios from "axios";
 
 export type ContactEnquiry = {
   full_name: string;
@@ -23,7 +23,7 @@ const submissionError = {
 export async function submitContactEnquiry(
   enquiry: ContactEnquiry,
 ): Promise<ContactSubmissionResult> {
-  const apiBaseUrl = process.env.API_BASE_URL;
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   if (!apiBaseUrl) {
     return submissionError;
@@ -31,15 +31,16 @@ export async function submitContactEnquiry(
 
   try {
     const apiUrl = new URL("/api/contact/", apiBaseUrl);
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(enquiry),
-      signal: AbortSignal.timeout(10000),
-    });
-    const result = (await response.json()) as Partial<ContactSubmissionResult> | null;
+    const { data: result } = await axios.post<Partial<ContactSubmissionResult> | null>(
+      apiUrl.href,
+      enquiry,
+      {
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        signal: AbortSignal.timeout(10000),
+      },
+    );
 
-    if (!response.ok || result?.success !== true) {
+    if (result?.success !== true) {
       return submissionError;
     }
 
